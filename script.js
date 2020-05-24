@@ -18,14 +18,15 @@ for (i = 9; i<18; i++) {
     }
 }
 
-
-$(".saveBtn").on("click", function(){
+//save button function to set items into local storage
+$(".saveBtn").on("click", function(event){
     for (m=9; m<18; m++) {
     localStorage.setItem("newtask"+m, $("#"+m).text())
      }
+     //event.stopPropogation()
     })
 
-
+//for loop to pull text into each hour Task row from local storage
 for (a = 9; a < 18; a++) {
     $("#"+a).text(localStorage.getItem("newtask"+a))
 }
